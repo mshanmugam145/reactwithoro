@@ -1,20 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import { FetchData } from './components/FetchData';
+
+import './App.css'
+import AbsoluteDifferencePage from './components/AbsoluteDifference';
+import AbsoluteDataTable from './components/AbsoluteDataTable';
+import S from './style'
 import { QueryClient, QueryClientProvider } from 'react-query';
+
 const queryClient = new QueryClient()
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <FetchData />
-      </header>
-    </div>
+    <S.HomeApp>
+      <AbsoluteDifferencePage />
+      <AbsoluteDataTable />
+    </S.HomeApp>
     </QueryClientProvider>
-  );
+  )
 }
 
-export default App;
+export default App
